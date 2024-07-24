@@ -8,47 +8,48 @@ import java.awt.*;
  * width and height.
  */
 
-
-public class Shape{
-   private int x;
-   private int y;
-   private int width;
-   private int height;
+public abstract class Shape {
+   protected int x;
+   protected int y;
+   protected int width;
+   protected int height;
    Color colour;
    int moveX = 1;
    int moveY = 1;
 
-   /*returns random integer between high and low limits*/
-   public int randomRange(int low, int high){
-     
+   /* returns random integer between high and low limits */
+   public int randomRange(int low, int high) {
+
       Random generator = new Random();
-      return generator.nextInt(Math.abs(high-low)+1) + Math.min(low, high);
+      return generator.nextInt(Math.abs(high - low) + 1) + Math.min(low, high);
    }
-   /*constructor initialises data fields to random values*/
-   public Shape(){
+
+   /* constructor initialises data fields to random values */
+   public Shape() {
       width = randomRange(20, 30);
       height = width;
       x = randomRange(0, 400 - width);
       y = randomRange(0, 400 - height);
-      colour = new Color(randomRange(0, 255),randomRange(0, 255),randomRange(0, 255));
+      colour = new Color(randomRange(0, 255), randomRange(0, 255), randomRange(0, 255));
    }
 
-    /*Displays this shape
-     * @param g a Graphics object allowing Graphics methods to be called to display this shape.
+   /*
+    * Displays this shape
+    * 
+    * @param g a Graphics object allowing Graphics methods to be called to display
+    * this shape.
     */
-   public  void display(Graphics g){
-   g.setColor(colour);
-   g.fillOval(x, y, width, height);
-    
-   }
+   public abstract void display(Graphics g);
 
-   /** Moves this shape within a 400 x 400 space. Essentially 'bounces' the shape when an edge is reached.
-   */
-   public void move(){
-      if (x >= 400-width || x <0){
+   /**
+    * Moves this shape within a 400 x 400 space. Essentially 'bounces' the shape
+    * when an edge is reached.
+    */
+   public void move() {
+      if (x >= 400 - width || x < 0) {
          moveX = -moveX;
       }
-      if (y >= 400-height || y <0){
+      if (y >= 400 - height || y < 0) {
          moveY = -moveY;
       }
       x += moveX;

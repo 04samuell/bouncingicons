@@ -89,7 +89,15 @@ public class ShapePanel extends JPanel {
             
             JButton b = (JButton) e.getSource();
             
-            if (b.getText() == "Add Shape"){
+            if (b.getText().equals("Circle")){
+               shapes.add(new Circle());
+            } else if (b.getText().equals("Square")){
+               shapes.add(new Circle());
+            } else if (b.getText().equals("Oval")){
+               shapes.add(new Circle());
+            } else if (b.getText().equals("Smiley")){
+               shapes.add(new Circle());
+            } else if (b.getText().equals("Swirl")){
                shapes.add(new Circle());
             } else if (b.getText() == "Start"){
                timer.start();

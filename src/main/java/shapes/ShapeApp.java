@@ -8,7 +8,7 @@ import javax.swing.*;
 public class ShapeApp{
 
    public static void main(String[]args){
-      JFrame frame = new JFrame("Lab 23"); //creates a new JFrame with a title
+      JFrame frame = new JFrame("Bouncing Icons"); //creates a new JFrame with a title
       frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);// Allows us to close the window
       //frame.setLayout(new FlowLayout());// Not technically necessary at this stage
  

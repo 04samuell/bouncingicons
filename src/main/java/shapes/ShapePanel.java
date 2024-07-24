@@ -25,6 +25,8 @@ public class ShapePanel extends JPanel {
    JTextField showNum = new JTextField(2);
    JLabel countLabel;
    Timer timer;
+
+   private JButton[] buttons ={new JButton("Circle"), new JButton("Square"), new JButton("Oval"), new JButton("Smiley"), new JButton("Swirl"), new JButton("Start"), new JButton("Stop")};
    
    private final int DELAY = 10;
    
@@ -39,24 +41,18 @@ public class ShapePanel extends JPanel {
       
       countLabel = new JLabel("Count");
       showNum = new JTextField(2);
-    
-      addShape =  new JButton ("Add Shape");
-      start = new JButton("Start");
-      stop =  new JButton("Stop");
       
       ButtonListener bl = new ButtonListener();
-      
-      addShape.addActionListener(bl);
-      start.addActionListener(bl);
-      stop.addActionListener(bl);
-      
+            
       timer = new Timer(DELAY, bl);
            
-      controlPanel.add(addShape);
-      controlPanel.add(start);
-      controlPanel.add(stop);
       controlPanel.add(countLabel);
       controlPanel.add(showNum);
+
+      for(JButton button: buttons) {
+         controlPanel.add(button);
+         button.addActionListener(bl);
+      }
       
       add(controlPanel);
       add(drawPanel);
@@ -94,7 +90,7 @@ public class ShapePanel extends JPanel {
             JButton b = (JButton) e.getSource();
             
             if (b.getText() == "Add Shape"){
-               shapes.add(new Shape());
+               shapes.add(new Circle());
             } else if (b.getText() == "Start"){
                timer.start();
             } else if (b.getText() == "Stop"){

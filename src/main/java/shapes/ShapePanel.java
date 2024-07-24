@@ -97,7 +97,7 @@ public class ShapePanel extends JPanel {
             } else if (b.getText().equals("Smiley")){
                shapes.add(new Smiley());
             } else if (b.getText().equals("Swirl")){
-               shapes.add(new Circle());
+               shapes.add(new Swirl());
             } else if (b.getText() == "Start"){
                timer.start();
             } else if (b.getText() == "Stop"){

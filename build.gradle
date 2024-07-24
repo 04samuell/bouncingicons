@@ -3,7 +3,7 @@ plugins {
 	id "jacoco";
 }
  
-def defaultMainClassName = "Main";
+def defaultMainClassName = "shapes.ShapeApp";
  
 application {
 	mainClass = project.hasProperty("mainClass") ? project.getProperty("mainClass") : defaultMainClassName;

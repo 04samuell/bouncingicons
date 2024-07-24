@@ -1,6 +1,5 @@
 package shapes;
 import javax.swing.*;
-import java.awt.*;
 
 /**
  * Comp161 - Lab 23

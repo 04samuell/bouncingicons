@@ -12,7 +12,6 @@ import javax.swing.*;
 import java.awt.event.*;
 import java.awt.*;
 import java.util.ArrayList;
-import java.io.*;
 
 public class ShapePanel extends JPanel {
    ArrayList<Shape> shapes = new ArrayList<Shape>();
@@ -94,9 +93,9 @@ public class ShapePanel extends JPanel {
             } else if (b.getText().equals("Square")){
                shapes.add(new Square());
             } else if (b.getText().equals("Oval")){
-               shapes.add(new Circle());
+               shapes.add(new Oval());
             } else if (b.getText().equals("Smiley")){
-               shapes.add(new Circle());
+               shapes.add(new Smiley());
             } else if (b.getText().equals("Swirl")){
                shapes.add(new Circle());
             } else if (b.getText() == "Start"){

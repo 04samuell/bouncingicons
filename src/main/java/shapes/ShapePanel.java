@@ -92,7 +92,7 @@ public class ShapePanel extends JPanel {
             if (b.getText().equals("Circle")){
                shapes.add(new Circle());
             } else if (b.getText().equals("Square")){
-               shapes.add(new Circle());
+               shapes.add(new Square());
             } else if (b.getText().equals("Oval")){
                shapes.add(new Circle());
             } else if (b.getText().equals("Smiley")){

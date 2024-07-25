@@ -22,7 +22,6 @@ public class ShapePanel extends JPanel {
    JButton stop;
    JLabel invalidLbl = new JLabel("");
 
-
    JTextField showNum = new JTextField(2);
    JLabel countLabel;
    Timer timer;
@@ -115,18 +114,14 @@ public class ShapePanel extends JPanel {
                timer.stop();
             } else if (b.getText().equals("Remove")) {
                try {
+
                   int numberToRemove = Integer.parseInt(showNum.getText());
-                  if (numberToRemove < 0 || numberToRemove >= shapes.size()) {
-                     invalidLbl.setForeground(Color.RED);
-                     invalidLbl.setText("INVALID");
-                     invalid = true;
-                  } else {
-                     shapes.remove(numberToRemove);
-                  }
+                  shapes.remove(numberToRemove);
+                  
                } catch (NumberFormatException ex) {
-                  invalidLbl.setForeground(Color.RED);
-                  invalidLbl.setText("INVALID");
-                  invalid = true;
+                  handleRemoveException();
+               } catch (IndexOutOfBoundsException ex) {
+                  handleRemoveException();
                }
             }
             if (shapes.isEmpty()) {
@@ -136,11 +131,17 @@ public class ShapePanel extends JPanel {
             }
 
          }
-         if(!invalid) {
+         if (!invalid) {
             invalidLbl.setText("");
          }
          invalid = false;
          repaint();
+      }
+
+      private void handleRemoveException() {
+         invalidLbl.setForeground(Color.RED);
+         invalidLbl.setText("INVALID");
+         invalid = true;
       }
    }
 }

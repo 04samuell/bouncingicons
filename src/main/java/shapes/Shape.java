@@ -56,4 +56,9 @@ public abstract class Shape {
       y += moveY;
    }
 
+   public void showIndex(Graphics g, int index) {
+      g.setColor(Color.BLACK);
+      g.drawString(String.valueOf(index), x, y);
+   }
+
 }

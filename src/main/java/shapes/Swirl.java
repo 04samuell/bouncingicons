@@ -7,7 +7,7 @@ import java.awt.*;
  * draws a swirl - a shape drawn of 4 coloured circles clustered around a small black circle, with arc highlights
  */
 
-public class Swirl extends Shape{
+public class Swirl extends Shape {
   Color shade;
   
   public Swirl(){

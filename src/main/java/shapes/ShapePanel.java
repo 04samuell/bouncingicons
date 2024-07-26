@@ -143,5 +143,6 @@ public class ShapePanel extends JPanel {
          invalidLbl.setText("INVALID");
          invalid = true;
       }
+      
    }
 }
